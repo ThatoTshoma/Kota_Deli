@@ -1,0 +1,49 @@
+﻿@model KotaDeli.Models.Customer
+@{
+    ViewData["Title"] = "Update Profile";
+}
+<div class="row">
+    <div class="col-md-8">
+        <div class="text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+
+        <form method="post" asp-action="UpdateProfile">
+            <div class="form-horizontal">
+
+                @if (ViewBag.message != null)
+                {
+                    <h5 class="alert alert-success">@ViewBag.message</h5>
+                }
+                <input asp-for="UserId" hidden />
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Name" class="form-control" autocomplete="on" aria-required="true" placeholder="Name" />
+                    <label asp-for="Name" class="form-label">Name</label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Surname" class="form-control" autocomplete="on" aria-required="true" placeholder="Surname" />
+                    <label asp-for="Surname" class="form-label">Surname</label>
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="ContactNumber" class="form-control" autocomplete="on" aria-required="true" placeholder="ContactNumber" />
+                    <label asp-for="ContactNumber" class="form-label">Contact Number</label>
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="EmailAddress" class="form-control" autocomplete="on" aria-required="true" placeholder="Email" />
+                    <label asp-for="EmailAddress" class="form-label">Email Address</label>
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark view-menu-button btn-block">Update</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

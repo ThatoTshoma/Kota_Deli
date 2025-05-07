@@ -1,0 +1,124 @@
+﻿@model KotaDeli.Models.Customer
+@{
+    ViewData["Title"] = "Update Delivery Address";
+}
+<div class="row">
+    <div class="col-md-8">
+        <div class="text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+
+        <form method="post" asp-action="UpdateAddress">
+            <div class="form-horizontal">
+
+                @if (ViewBag.message != null)
+                {
+                    <h5 class="alert alert-success">@ViewBag.message</h5>
+                }
+                <input asp-for="UserId" hidden />
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="AddressLine1" class="form-control" autocomplete="on" aria-required="true" placeholder="AddressLine1" />
+                    <label asp-for="AddressLine1" class="form-label">AddressLine 1</label>
+                    <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="AddressLine2" class="form-control" autocomplete="on" aria-required="true" placeholder="AddressLine2" />
+                    <label asp-for="AddressLine2" class="form-label">AddressLine 2</label>
+                    <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <label for="Province">Province</label>
+                    <select for="Province" asp-items="@ViewBag.ProvinceList" class="form-control" id="Province">
+                        <option value="">Select Province</option>
+                    </select>
+                    <span validation-for="Province" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <label for="CityId">City</label>
+                    <select for="CityId" class="form-control" id="City">
+                        <option value="">Select City</option>
+                    </select>
+                    <span validation-for="CityId" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <label asp-for="SuburbId">Suburb</label>
+                    <select asp-for="SuburbId" class="form-control" id="Suburb">
+                        <option value="">Select Suburb</option>
+                    </select>
+                    <span asp-validation-for="SuburbId" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Suburb.PostalCode" class="form-control" id="PostalCode" readonly />
+                    <label asp-for="Suburb.PostalCode" class="form-label">Postal Code</label>
+                    <span asp-validation-for="Suburb.PostalCode" class="text-danger"></span>
+                </div>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <a class="btn btn-danger w-100 add-to-cart-button" asp-controller="Order" asp-action="Cart">
+                            Back
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-dark w-100 view-menu-button">Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#Province").change(function () {
+                var provinceId = $(this).val();
+                $("#City").empty().append('<option value="">Select City</option>');
+                $("#Suburb").empty().append('<option value="">Select Suburb</option>');
+                $("#PostalCode").val('');
+
+                if (provinceId) {
+                    $.getJSON('/Customer/LoadCity', { provinceId: provinceId }, function (data) {
+                        $.each(data, function (index, item) {
+                            $("#City").append($('<option>', {
+                                value: item.cityId,
+                                text: item.cityName
+                            }));
+                        });
+                    });
+                }
+            });
+
+            $("#City").change(function () {
+                var cityId = $(this).val();
+                $("#Suburb").empty().append('<option value="">Select Suburb</option>');
+                $("#PostalCode").val('');
+
+                if (cityId) {
+                    $.getJSON('/Customer/LoadSuburb', { cityId: cityId }, function (data) {
+                        $.each(data, function (index, item) {
+                            $("#Suburb").append($('<option>', {
+                                value: item.suburbId,
+                                text: item.suburbName,
+                                'data-postalcode': item.postalCode
+                            }));
+                        });
+                    });
+                }
+            });
+
+            $("#Suburb").change(function () {
+                var selectedOption = $(this).find('option:selected');
+                var postalCode = selectedOption.data('postalcode') || '';
+                $("#PostalCode").val(postalCode);
+            });
+        });
+    </script>
+}

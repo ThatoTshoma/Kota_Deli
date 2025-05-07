@@ -1,0 +1,47 @@
+﻿@using KotaDeli.Models;
+@model CartViewModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<div>
+    <h4>Your Cart</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cart.Items)
+            {
+                <tr>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@(item.Price * item.Quantity).ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+   @*  <h4>Total: @Model.Total.ToString("C")</h4> *@
+
+    <form asp-action="PlaceOrder" method="post">
+        <input type="hidden" name="cartId" value="@Model.Cart.CartId" />
+
+        <div class="form-group">
+            <label>Delivery Option</label>
+            <select name="DeliveryOption" class="form-control" required>
+                <option value="">-- Select --</option>
+                <option value="Home Delivery">Home Delivery</option>
+                <option value="Pick-up">Pick-up</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Place Order</button>
+    </form>
+</div>

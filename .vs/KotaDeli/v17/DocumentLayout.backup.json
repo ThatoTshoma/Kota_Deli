@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HomeSpace\\KotaDeli\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\views\\order\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\views\\order\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\data\\services\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\data\\services\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\views\\customer\\updateaddress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\views\\customer\\updateaddress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|d:\\homespace\\kotadeli\\kotadeli\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C06A161-CD64-46B2-A798-2A6DC9EE47F9}|KotaDeli\\KotaDeli.csproj|solutionrelative:kotadeli\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "KotaDeli\\Models\\Order.cs",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Models\\Order.cs",
+              "RelativeToolTip": "KotaDeli\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:26:13.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdersService.cs",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Data\\Services\\OrdersService.cs",
+              "RelativeDocumentMoniker": "KotaDeli\\Data\\Services\\OrdersService.cs",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Data\\Services\\OrdersService.cs",
+              "RelativeToolTip": "KotaDeli\\Data\\Services\\OrdersService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:23:57.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateAddress.cshtml",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Customer\\UpdateAddress.cshtml",
+              "RelativeDocumentMoniker": "KotaDeli\\Views\\Customer\\UpdateAddress.cshtml",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Customer\\UpdateAddress.cshtml",
+              "RelativeToolTip": "KotaDeli\\Views\\Customer\\UpdateAddress.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T17:33:44.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Menu.cshtml",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Home\\Menu.cshtml",
+              "RelativeDocumentMoniker": "KotaDeli\\Views\\Home\\Menu.cshtml",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Home\\Menu.cshtml",
+              "RelativeToolTip": "KotaDeli\\Views\\Home\\Menu.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T17:22:58.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "KotaDeli\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "KotaDeli\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAswFEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T14:41:28.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Order\\Cart.cshtml",
+              "RelativeDocumentMoniker": "KotaDeli\\Views\\Order\\Cart.cshtml",
+              "ToolTip": "D:\\HomeSpace\\KotaDeli\\KotaDeli\\Views\\Order\\Cart.cshtml",
+              "RelativeToolTip": "KotaDeli\\Views\\Order\\Cart.cshtml",
+              "ViewState": "AgIAAJoAAAAAAAAAAADwv4gAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T14:26:28.95Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

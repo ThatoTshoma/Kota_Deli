@@ -1,0 +1,117 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.view-menu-button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 50px;
+}
+.add-to-cart-button {
+    width: 10%;
+    padding: 8px;
+    border-radius: 50px;
+}
+.searchbox-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.searchbox {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.custom-navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-collapse {
+    align-items: center;
+    display: flex;
+    gap: 90px; 
+}
+
+.cart-section {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-left: 50px;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    position: relative;
+    color: #000; 
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    padding: 3px 6px;
+}
+.quantity-control a {
+    width: 60px;
+    text-align: center;
+}
+
+.quantity-control span {
+    min-width: 60px;
+    text-align: center;
+}
+
+.form-check-input:checked {
+    background-color: black;
+    border-color: black;
+}
+
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    border-color: black;
+}
+
+

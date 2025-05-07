@@ -1,0 +1,24 @@
+﻿@model List<Restaurant>
+
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Kota Restaurants</h2>
+
+    <div class="row" id="restaurantList">
+        @foreach (var restaurant in Model)
+        {
+            <div class="col-md-4 mb-4 restaurant-card" >
+                <div class="card shadow-sm rounded">
+                    <img src="@restaurant.ImageUrl" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@restaurant.Name</h5>
+                        <p class="card-text text-muted">@restaurant.AddressLine1</p>
+                        <a href="@Url.Action("Menu", "Home", new { id = restaurant.RestaurantId })" class="btn btn-dark view-menu-button">View Menu</a>
+
+@*                         <button class="view-menu-button">View Menu</button>
+ *@                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
