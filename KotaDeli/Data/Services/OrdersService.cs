@@ -25,18 +25,26 @@ namespace KotaDeli.Data.Services
 
             foreach (var item in items)
             {
+                var itemPrice = (double)item.Menu.Price;
+
+                if (deliveryoption == "Delivery")
+                {
+                    itemPrice += 10.00;
+                }
+
                 var orderItem = new OrderItem()
                 {
                     Quantity = item.Quantity,
                     MenuId = item.Menu.MenuId,
                     OrderId = order.OrderId,
-                    Price = (double)item.Menu.Price
+                    Price = itemPrice
                 };
                 await _db.OrderItems.AddAsync(orderItem);
             }
 
             await _db.SaveChangesAsync();
         }
+
 
         public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(int userId, string userRole)
         {

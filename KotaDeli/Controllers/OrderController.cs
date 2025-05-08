@@ -72,7 +72,7 @@ namespace KotaDeli.Controllers
             return View(items);
 
         }
-        // [HttpPost]
+
         public async Task<IActionResult> PlaceOrder(string deliveryOption)
         {
             var items = _cart.GetCartItems();
