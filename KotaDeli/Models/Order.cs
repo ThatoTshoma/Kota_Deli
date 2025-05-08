@@ -11,7 +11,7 @@ namespace KotaDeli.Models
         public double DeliveryFee { get; set; }
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
-
+        //Thato
 
         public List<OrderItem> OrderItems { get; set; }
     }
