@@ -3,54 +3,74 @@
 @{
     ViewData["Title"] = "All orders";
 }
-<p>
-    <a asp-action="GeneratePdfReport">Generate pdf</a>
-</p>
 
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">My Orders</h2>
 
-<div class="row">
-    <div class="col-md-8 offset-2">
-        <p>
-            <h4>List of all your orders</h4>
-        </p>
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            You haven't placed any orders yet.
+        </div>
+    }
+    else
+    {
+        @foreach (var order in Model)
+        {
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Order #@order.OrderId</h5>
+                    <span class="badge bg-dark">@order.Date.ToString("dd MMMM yyyy")</span>
+                </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Items</th>
-                    <th>Total</th>
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                    {
-                        <th>User</th>
-                    }
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var order in Model)
-                {
-                    <tr>
-                        <td class="align-middle">@order.OrderId</td>
-                        <td class="align-middle">
-                            <ul style="list-style-type:none">
-                                @foreach (var item in order.OrderItems)
-                                {
-                                    <li>
-                                        <div class="alert alert-info" role="alert">
-                                            <span class="badge bg-success">@item.Quantity</span> [@item.Price.ToString("c")] - @item.Menu.Name
+                <div class="card-body">
+                    <div class="row">
+                        @foreach (var item in order.OrderItems)
+                        {
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <img src="@item.Menu.ImageUrl" class="rounded me-3" style="width: 100px; height: 100px; object-fit: cover;">
+                                    <div>
+                                        <h6 class="mb-1">@item.Menu.Name</h6>
+                                        <p class="text-muted small mb-2">@item.Menu.Description</p>
+                                        <span class="badge bg-secondary">Qty: @item.Quantity</span>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold">@item.Price.ToString("c")</span>
+                                           
                                         </div>
-                                    </li>
-                                }
-                            </ul>
-                        </td>
-                        <td class="align-middle">
-                            @order.OrderItems.Select(m => m.Menu.Price * m.Quantity).Sum().ToString("c")
-                        </td>
-                
-                    </tr>
-                }
-            </tbody>
-        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
 
-    </div>
+                <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fw-bold">Order Status:</span>
+                        @if(order.Status == "Ordered")
+                        {
+                            <span class="badge bg-danger">@order.Status</span>
+                        }
+                        else if(order.Status == "Ready")
+                        {
+                            <span class="badge bg-info">@order.Status</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success">@order.Status</span>
+                        }
+
+                        
+                    </div>
+                    <h5 class="mb-0 text-dark">
+                        <b>
+                            Total: @order.OrderItems.Sum(i => i.Price * i.Quantity).ToString("c")
+                        </b>
+                    </h5>
+                </div>
+            </div>
+        }
+    }
 </div>
+

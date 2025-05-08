@@ -8,10 +8,10 @@ namespace KotaDeli.Models
         public int OrderId { get; set; }
         public DateTime Date { get; set; } 
 
-        public double DeliveryFee { get; set; }
+        public string DeliveryOption { get; set; }
+        public string Status { get; set; }
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
-        //Thato
 
         public List<OrderItem> OrderItems { get; set; }
     }

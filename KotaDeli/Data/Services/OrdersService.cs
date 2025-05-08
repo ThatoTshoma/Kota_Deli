@@ -10,13 +10,14 @@ namespace KotaDeli.Data.Services
         {
             _db = db;
         }
-        public async Task StoreOrderAsync(List<CartItem> items, int customerId, double deliveryFee)
+        public async Task StoreOrderAsync(List<CartItem> items, int customerId, string deliveryoption)
         {
             var order = new Order()
             {
                 CustomerId = customerId,
-                DeliveryFee = deliveryFee,
-                Date = DateTime.Now
+                DeliveryOption = deliveryoption,
+                Date = DateTime.Now,
+                Status = "Ordered"
             };
 
             await _db.Orders.AddAsync(order);
@@ -39,7 +40,7 @@ namespace KotaDeli.Data.Services
 
         public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(int userId, string userRole)
         {
-            var orders = await _db.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Menu).Include(n => n.Customer).ToListAsync();
+            var orders = await _db.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Menu).Include(n => n.Customer).OrderByDescending(n => n.Date).ToListAsync();
 
             if (userRole != "Admin")
             {

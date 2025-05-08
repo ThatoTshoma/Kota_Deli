@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KotaDeli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34e8413d9817a659e0942a892272824b7fdd77a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("KotaDeli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KotaDeli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

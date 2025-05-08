@@ -79,9 +79,9 @@ namespace KotaDeli.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var customer = _db.Customers.SingleOrDefault(c => c.UserId.ToString() == userId);
 
-            double deliveryFee = deliveryOption == "delivery" ? 10.00 : 0.00;
+            string deliveryOptions = deliveryOption == "delivery" ? "Delivery": "Pickup";
 
-            await _ordersService.StoreOrderAsync(items, customer.CustomerId, deliveryFee);
+            await _ordersService.StoreOrderAsync(items, customer.CustomerId, deliveryOptions);
             await _cart.ClearCart();
 
             return RedirectToAction("Order", "Customer");

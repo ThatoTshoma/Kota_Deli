@@ -291,3 +291,4 @@ D:\HomeSpace\KotaDeli\KotaDeli\obj\Debug\net8.0\refint\KotaDeli.dll
 D:\HomeSpace\KotaDeli\KotaDeli\obj\Debug\net8.0\KotaDeli.pdb
 D:\HomeSpace\KotaDeli\KotaDeli\obj\Debug\net8.0\KotaDeli.genruntimeconfig.cache
 D:\HomeSpace\KotaDeli\KotaDeli\obj\Debug\net8.0\ref\KotaDeli.dll
+D:\HomeSpace\KotaDeli\KotaDeli\obj\Debug\net8.0\KotaDeli.sourcelink.json
