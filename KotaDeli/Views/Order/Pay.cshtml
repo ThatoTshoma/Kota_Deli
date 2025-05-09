@@ -1,0 +1,12 @@
+﻿<form action="https://sandbox.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_SANDBOX_MERCHANT_ID" />
+    <input type="hidden" name="merchant_key" value="YOUR_SANDBOX_MERCHANT_KEY" />
+    <input type="hidden" name="return_url" value="https://localhost:5001/Order/Success" />
+    <input type="hidden" name="cancel_url" value="https://localhost:5001/Order/Cancel" />
+    <input type="hidden" name="notify_url" value="https://localhost:5001/Order/Notify" />
+
+    <input type="hidden" name="amount" value="@Model.TotalAmount.ToString("0.00")" />
+    <input type="hidden" name="item_name" value="Order @Model.OrderId from KotaDeli" />
+
+    <button type="submit" class="btn btn-success w-100">Pay Now</button>
+</form>

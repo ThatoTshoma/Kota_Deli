@@ -79,12 +79,49 @@ namespace KotaDeli.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var customer = _db.Customers.SingleOrDefault(c => c.UserId.ToString() == userId);
 
-            string deliveryOptions = deliveryOption == "delivery" ? "Delivery": "Pickup";
+            string deliveryOptions = deliveryOption == "delivery" ? "Delivery" : "Pickup";
 
             await _ordersService.StoreOrderAsync(items, customer.CustomerId, deliveryOptions);
             await _cart.ClearCart();
 
             return RedirectToAction("Order", "Customer");
+        }
+        public async Task<IActionResult> Pay()
+        {
+            return View();
+        }
+        public IActionResult Success()
+        {
+            ViewBag.Message = "Payment was successful!";
+            return View();
+        }
+
+        public IActionResult Cancel()
+        {
+            ViewBag.Message = "Payment was cancelled.";
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Notify()
+        {
+
+            var form = await Request.ReadFormAsync();
+            string paymentStatus = form["payment_status"];
+            string orderId = form["item_name"]; 
+            if (paymentStatus == "COMPLETE")
+            {
+
+                int id = int.Parse(orderId.Split(' ')[1]);
+                var order = _db.Orders.Find(id);
+                if (order != null)
+                {
+                    //order.IsPaid = true;
+                    _db.SaveChanges();
+                }
+            }
+
+            return Ok();
         }
 
     }

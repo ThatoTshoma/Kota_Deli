@@ -25,19 +25,19 @@ namespace KotaDeli.Data.Services
 
             foreach (var item in items)
             {
-                var itemPrice = (double)item.Menu.Price;
+                //var itemPrice = (double)item.Menu.Price;
 
-                if (deliveryoption == "Delivery")
-                {
-                    itemPrice += 10.00;
-                }
+                //if (deliveryoption == "Delivery")
+                //{
+                //    itemPrice += 10.00;
+                //}
 
                 var orderItem = new OrderItem()
                 {
                     Quantity = item.Quantity,
                     MenuId = item.Menu.MenuId,
                     OrderId = order.OrderId,
-                    Price = itemPrice
+                    Price = (double)item.Menu.Price
                 };
                 await _db.OrderItems.AddAsync(orderItem);
             }
